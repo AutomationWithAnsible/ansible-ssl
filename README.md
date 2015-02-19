@@ -74,12 +74,10 @@ ssl_cert:
 
 Following command is used to encrypt file.
 
-    :::bash
     ansible-vault encrypt vault-ssl.yml
 
 Following command is used to edit encrypted file.
 
-    :::bash
     ansible-vault edit vault-ssl.yml
 
 
