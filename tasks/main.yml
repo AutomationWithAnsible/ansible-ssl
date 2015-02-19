@@ -1,0 +1,23 @@
+---
+
+- name: Create SSL directory
+  file:
+      state="directory"
+      path="{{ ssl_path }}"
+      mode="0700"
+
+- name: Deploy PEM file
+  template:
+      src="pemfile.j2"
+      dest="{{ ssl_path }}/{{ item.hostname }}.pem"
+      mode="0600"
+  with_items: ssl_cert
+  no_log: True
+
+- name: Deploy key file
+  template:
+      src="keyfile.j2"
+      dest="{{ ssl_path }}/{{ item.hostname }}.key"
+      mode="0600"
+  with_items: ssl_cert
+  no_log: True
