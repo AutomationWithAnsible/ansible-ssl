@@ -79,5 +79,3 @@ Following command is used to encrypt file.
 Following command is used to edit encrypted file.
 
     ansible-vault edit vault-ssl.yml
-
-
