@@ -11,7 +11,7 @@
       src="pemfile.j2"
       dest="{{ ssl_path }}/{{ item.hostname }}.pem"
       mode="0600"
-  with_items: ssl_cert
+  with_items: "{{ ssl_cert }}"
   no_log: True
 
 - name: Deploy key file
@@ -19,5 +19,5 @@
       src="keyfile.j2"
       dest="{{ ssl_path }}/{{ item.hostname }}.key"
       mode="0600"
-  with_items: ssl_cert
+  with_items: "{{ ssl_cert }}"
   no_log: True
